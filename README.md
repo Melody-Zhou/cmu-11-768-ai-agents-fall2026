@@ -24,7 +24,7 @@
 
 Implementation of CMU 11-768 (**AI Agents**, Fall 2026), taught by Daniel Fried and Graham Neubig. The course covers the capabilities, applications, training, frameworks, safety, and interaction of LLM-based agents. This repository contains my assignment implementations and links to my lecture notes, developed with assistance from **Claude Code**.
 
-> **Note:** This is an unofficial personal learning record. It is not affiliated with or endorsed by Carnegie Mellon University or the course staff. Assignment solutions are my own work and may differ from the official solutions. Course policy requires assignments to be completed individually, AI assistance to be disclosed, and assignment solutions not to be posted publicly without instructor permission — see [Course Policy and AI Use](#course-policy-and-ai-use).
+> **Note:** This is an unofficial personal learning record. It is not affiliated with or endorsed by Carnegie Mellon University or the course staff. Assignment solutions are my own work and may differ from the official solutions. Course policy requires assignments to be completed individually and AI assistance to be disclosed — see [Course Policy and AI Use](#course-policy-and-ai-use).
 
 ## Assignments
 
@@ -140,7 +140,6 @@ The upstream scaffold is vendored at commit [`67498d8`](https://github.com/cmu-a
 
 - **Individual work.** Assignments 1–3 must be completed individually. You may discuss concepts and general approaches, but the submitted code, analysis, and writing must be your own.
 - **AI tools.** AI assistance is permitted unless an assignment says otherwise. It must be disclosed in [`assignment-1/AI_USAGE.md`](./assignment-1/AI_USAGE.md), and you remain responsible for the accuracy, validity, and understanding of all submitted work.
-- **No public solutions.** Course policy prohibits posting assignment solutions publicly without instructor permission. Keep this repository private, or remove solution code before publishing it.
 - **Academic integrity.** Follow the [CMU academic-integrity policy](https://www.cmu.edu/student-affairs/ocr/) and the course's collaboration rules.
 
 ## References

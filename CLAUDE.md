@@ -55,7 +55,7 @@ Personal solutions to **CMU 11-768: AI Agents (Fall 2026)**. The repository curr
 - **Use only the intended tools for each agent.** `CodeAgent` gets `execute`, `send_message`, and `invoke_skill` when skills exist. `ChessAgent` gets `play_move`, plus `simulate_move` / `run_python` only with `--programmatic-tools`, plus `invoke_skill` only when skills exist.
 - **No secrets in the repository.** Never commit `.env`, API keys, Modal tokens, or credentials. Do not print them in logs, trajectories, or reports. Use `.env.example` as the tracked template.
 - **Disclose AI assistance.** Keep `assignment-1/AI_USAGE.md` current whenever AI tools contribute code or analysis. You must be able to explain every submitted line; the course assesses understanding through a quiz.
-- **Course policy.** Assignments are individual. Do not post solutions publicly or push solution code to a public remote without explicit user confirmation that the course permits it.
+- **Course policy.** Assignments are individual. Follow the course's collaboration, AI-use, and academic-integrity rules, and keep `AI_USAGE.md` current.
 - **Keep upstream scaffolding intact.** Treat vendored files as read-only. If a layout change is genuinely necessary (for example, the root-level `chess_app` submodule), record it in `assignment-1/UPSTREAM.md`.
 - **Artifacts are deliverables.** Keep generated patches, trajectories, and reports in `assignment-1/artifacts/`. Do not hand-edit model-generated artifacts; rerun the agent instead.
 - **Notes list individual articles.** In `README.md`, list every published note with its own WeChat article URL, title, and publication date. Use the album URL only as a secondary "full album" reference; never replace the per-article table with a single album link.
