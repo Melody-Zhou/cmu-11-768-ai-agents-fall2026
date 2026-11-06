@@ -58,6 +58,7 @@ Personal solutions to **CMU 11-768: AI Agents (Fall 2026)**. The repository curr
 - **Course policy.** Assignments are individual. Do not post solutions publicly or push solution code to a public remote without explicit user confirmation that the course permits it.
 - **Keep upstream scaffolding intact.** Treat vendored files as read-only. If a layout change is genuinely necessary (for example, the root-level `chess_app` submodule), record it in `assignment-1/UPSTREAM.md`.
 - **Artifacts are deliverables.** Keep generated patches, trajectories, and reports in `assignment-1/artifacts/`. Do not hand-edit model-generated artifacts; rerun the agent instead.
+- **Notes list individual articles.** In `README.md`, list every published note with its own WeChat article URL, title, and publication date. Use the album URL only as a secondary "full album" reference; never replace the per-article table with a single album link.
 - **English in `README.md` and `CLAUDE.md`.** Course code and docs are English; notes links may point to Chinese posts.
 - **Minimal diffs.** Match the surrounding style and comment density. Do not add speculative abstractions, extra dependencies, or unrelated refactors.
 

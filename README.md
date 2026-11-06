@@ -38,11 +38,16 @@ The remaining course grade comes from lecture highlights (10%) and the half-seme
 
 ## Notes
 
-Unofficial lecture notes (in Chinese) are published in my WeChat official-account album:
+Unofficial lecture notes (in Chinese) are published on my WeChat official account. Each post maps to one lecture:
 
-- [11-768 AI Agents · 课程笔记合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzY5MDQ1NjczOA==&action=getalbum&album_id=4757631553994948609)
+| # | Lecture | Published | Article |
+|:---:|---------|:---------:|:-------:|
+| 1 | Course Overview: What Is an Agent? | 2026-10-28 | [Read](https://mp.weixin.qq.com/s?__biz=MzY5MDQ1NjczOA==&mid=2247483877&idx=1&sn=a0b5d51e5eef3911df102e57f8a68a38&chksm=f3c95028c4bed93e7c937112ac32503e5b1c1b818e12c711b55387de70fdcf36ec7aef41fd6e) |
+| 2 | Agent Capabilities 1: Tool Use | 2026-10-29 | [Read](https://mp.weixin.qq.com/s?__biz=MzY5MDQ1NjczOA==&mid=2247483930&idx=1&sn=3558436bf2c7af43ab767bc1ea838f94&chksm=f3c953d7c4bedac12d3d200b2fdf0ad9e7cca14fc8ce3f04cbdd0bfaa4f420dfb926bc1e3a71) |
+| 3 | Agent Capabilities 2: Context Management for Long-Context Agents | 2026-11-03 | [Read](https://mp.weixin.qq.com/s?__biz=MzY5MDQ1NjczOA==&mid=2247483982&idx=1&sn=cdcc4d89cd090ddcfaa69e6ff32a84b5&chksm=f3c95383c4beda95d81d0a171760dd3c2e4d151cf5edc255a1fc51a70332bbf0da29f753b5bb) |
+| 4 | Agent Capabilities 3: Skills and Memory | 2026-11-04 | [Read](https://mp.weixin.qq.com/s?__biz=MzY5MDQ1NjczOA==&mid=2247484025&idx=1&sn=ba8ed32dd88788d8d4e01edae801fb06&chksm=f3c953b4c4bedaa28677d6cff8d984bea31408b0a326aaea493100e3dab6ee94cfa5fe2fe3e4) |
 
-Individual lecture links will be added as the notes are published.
+New posts are added as the course progresses. The full album is also available [here](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzY5MDQ1NjczOA==&action=getalbum&album_id=4757631553994948609).
 
 ## Setup
 
