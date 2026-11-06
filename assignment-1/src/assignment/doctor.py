@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import os
 from urllib.parse import urlparse
 
@@ -23,6 +24,21 @@ def _configured(name: str) -> str | None:
     if not value or any(marker in value.lower() for marker in PLACEHOLDERS):
         return None
     return value
+
+
+def _is_private_host(host: str | None) -> bool:
+    """Whether a URL host is a private/loopback IP address.
+
+    Allows a locally hosted OpenAI-compatible endpoint to use plain HTTP while
+    keeping the HTTPS requirement for public hosts.
+    """
+
+    if not host:
+        return False
+    try:
+        return ipaddress.ip_address(host).is_private
+    except ValueError:
+        return False
 
 
 def main() -> int:
@@ -64,8 +80,12 @@ def main() -> int:
         failures.append("OPENAI_MODEL is missing")
     if base_url:
         parsed = urlparse(base_url)
-        if parsed.scheme != "https" or not parsed.netloc:
-            failures.append("OPENAI_BASE_URL must be a complete HTTPS URL")
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            failures.append("OPENAI_BASE_URL must be a complete HTTP(S) URL")
+        elif parsed.scheme == "http" and not _is_private_host(parsed.hostname):
+            failures.append(
+                "OPENAI_BASE_URL must use HTTPS unless the host is a private IP address"
+            )
         else:
             print(f"[ok] inference endpoint: {parsed.netloc}")
     else:

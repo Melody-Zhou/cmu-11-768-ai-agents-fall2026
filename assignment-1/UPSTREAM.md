@@ -12,6 +12,11 @@ This directory vendors the official Assignment 1 starter repository. The upstrea
 - The upstream `assignment-1/chess_app` submodule and its `assignment-1/.gitmodules` were replaced by a single root-level submodule at `assignment-1/chess_app`. This keeps the monorepo's git metadata at the root while preserving the assignment's `verify_source` check, which requires a clean `chess_app` checkout at the pinned base commit.
 - No course source, test, task, or `chess_app` file was modified.
 
+## Local environment deviations
+
+- `src/assignment/doctor.py` accepts plain HTTP for private-network IP addresses so the company-hosted OpenAI-compatible endpoint can pass `make doctor`. Public hosts still require HTTPS. This file is a local validation helper and is not part of the assignment submission.
+- The local `.env` points at that endpoint and holds its API key. It is gitignored and must never be committed.
+
 ## Keeping upstream files pristine
 
 `ASSIGNMENT.md`, `README.md`, `Makefile`, `pyproject.toml`, `uv.lock`, `tests/`, `tasks/`, and `chess_app/` are upstream files. Student work belongs in `src/assignment/agent/` (and `src/assignment/prompts.py` only when the assignment calls for it). Record any necessary deviation here.
