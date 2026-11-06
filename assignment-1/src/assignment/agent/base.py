@@ -28,6 +28,7 @@ DEFAULT_COMPACTION_KEEP_RECENT_STEPS = 1
 DEFAULT_COMPACTION_MAX_TOKENS = 1_200
 MAX_OBSERVATION_CHARS = 10_000
 
+# TODO 2.1: instructions for the model-generated working memory.
 COMPACTION_SYSTEM_PROMPT = """You compact the working memory of a software-engineering agent.
 Write a concise, factual summary of the earlier steps supplied by the user.
 Preserve:
@@ -158,13 +159,13 @@ class Agent:
         if self.skills:
             self.tools.append(INVOKE_SKILL_TOOL)
 
-        # Conversation history after the standing system and task messages.
-        # `run` appends each assistant action followed by its linked tool
-        # observations. `build_prompt` prepends the system and task messages.
+        # TODO 1.1.a: conversation history after the standing system and task
+        # messages. `run` appends each assistant action followed by its linked
+        # tool observations; `build_prompt` prepends the standing messages.
         self.messages: list[dict[str, Any]] = []
 
     def load_skills(self, skills_path: Path) -> dict[str, dict[str, str]]:
-        """Load the skill folders exposed to this agent."""
+        """TODO 1.4: discover SKILL.md files and parse their metadata/content."""
 
         if not skills_path.is_dir():
             raise ValueError(f"Skills path is not a directory: {skills_path}")
@@ -280,7 +281,7 @@ class Agent:
         return response.choices[0].message.model_dump(exclude_none=True)
 
     def build_prompt(self) -> list[dict[str, Any]]:
-        """Build the domain-agnostic message sequence for the model."""
+        """TODO 1.1.a: build the domain-agnostic system/task/history prompt."""
 
         messages: list[dict[str, Any]] = []
         if self.system_prompt:
@@ -314,7 +315,7 @@ class Agent:
         return self.compact_threshold_tokens is not None
 
     def compact_context(self):
-        """Replace parts of prompt with model-generated working memory."""
+        """TODO 2.1: replace the old prefix with model-generated working memory."""
 
         assistant_positions = [
             index
@@ -406,7 +407,10 @@ class Agent:
         return True
 
     def run(self) -> None:
-        """Run ReAct steps, always saving the trajectory and stopping Modal."""
+        """TODO 1.2 / 2.2: run ReAct steps and compact before each request.
+
+        Always saves the trajectory and stops Modal.
+        """
 
         try:
             while not self.finished:

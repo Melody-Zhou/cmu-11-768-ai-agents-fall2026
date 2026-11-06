@@ -44,15 +44,16 @@ class CodeAgent(Agent):
         self.task = task
         self.submitted_patch = ""
 
-        # `Agent.__init__` has already loaded skills and registered
-        # `invoke_skill` when a catalog exists; add the coding tools after it.
+        # TODO 1.3: register the coding tools after the base class added
+        # `invoke_skill`.
         self.tools.extend([EXECUTE_TOOL, SEND_MESSAGE_TOOL])
 
+        # TODO 1.1.b: construct the system and task prompts.
         self.system_prompt = self._build_system_prompt()
         self.task_prompt = self._build_task_prompt()
 
     def _build_system_prompt(self) -> str:
-        """Write the standing coding-agent instructions and environment block."""
+        """TODO 1.1.b: standing instructions and the required environment block."""
 
         system_information = json.dumps(
             {
@@ -86,7 +87,7 @@ or exports from an earlier command. When the task is complete, call
         return prompt
 
     def _build_task_prompt(self) -> str:
-        """Put the task statement and the working protocol in a user message."""
+        """TODO 1.1.b: task statement and working protocol in a user message."""
 
         prompt = (
             "Solve the following software issue in the repository at /testbed.\n\n"
@@ -106,7 +107,7 @@ or exports from an earlier command. When the task is complete, call
     def execute_tool_calls(
         self, tool_calls: list[dict[str, Any]]
     ) -> list[dict[str, str]]:
-        """Execute ``execute`` and ``send_message`` calls in the code sandbox."""
+        """TODO 1.3: dispatch coding tool calls into linked observations."""
 
         observations: list[dict[str, str]] = []
         for index, call in enumerate(tool_calls):
@@ -160,6 +161,8 @@ or exports from an earlier command. When the task is complete, call
         }
 
     def _execute_command(self, call_id: str, arguments: Any) -> dict[str, str]:
+        """TODO 1.3: run an execute call and format the sandbox observation."""
+
         parsed, error = self._parse_arguments(call_id, arguments)
         if error is not None:
             return error
@@ -206,6 +209,8 @@ or exports from an earlier command. When the task is complete, call
         }
 
     def _send_message(self, call_id: str, arguments: Any) -> dict[str, str]:
+        """TODO 1.3: mark the run complete after a send_message call."""
+
         parsed, error = self._parse_arguments(call_id, arguments)
         if error is not None:
             return error
@@ -224,6 +229,8 @@ or exports from an earlier command. When the task is complete, call
         }
 
     def _invoke_skill(self, call_id: str, arguments: Any) -> dict[str, str]:
+        """TODO 1.4: return the full content of a loaded skill."""
+
         parsed, error = self._parse_arguments(call_id, arguments)
         if error is not None:
             return error
